@@ -1,26 +1,38 @@
 package com.pendext.asynchronocity.app;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.view.*;
+import android.widget.*;
+import android.widget.AdapterView.OnItemSelectedListener;
+import com.pendext.asynchronocity.app.fragments.OnUIThreadFragment;
+import com.pendext.asynchronocity.app.listeners.ExampleSpinnerListener;
 
 
 public class MainActivity extends Activity {
+
+    private Spinner exampleSpinner;
+
+    private String[] list = new String[] {
+            "On UI Thread Example",
+            "Async Task Example",
+            "Loader Example"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        exampleSpinner = (Spinner) findViewById(R.id.example_spinner);
+
+        ArrayAdapter<String> exampleSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
+        exampleSpinner.setAdapter(exampleSpinnerAdapter);
+        exampleSpinner.setOnItemSelectedListener(new ExampleSpinnerListener(getFragmentManager()));
+
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new OnUIThreadFragment())
                     .commit();
         }
     }
@@ -28,19 +40,14 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -48,19 +55,4 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-    }
 }

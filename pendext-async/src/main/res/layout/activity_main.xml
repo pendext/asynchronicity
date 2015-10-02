@@ -1,7 +1,30 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
-             android:id="@+id/container"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".MainActivity"
-             tools:ignore="MergeRootFrame"/>
+             tools:ignore="MergeRootFrame">
+
+
+    <TextView
+            android:text="@string/examples"
+            android:id="@+id/choose_the_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="25dp"/>
+
+    <Spinner
+            android:id="@+id/example_spinner"
+            android:layout_below="@+id/choose_the_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/example_spinner"
+            android:layout_height="wrap_content"
+            android:id="@+id/container"
+            android:orientation="horizontal"/>
+
+</RelativeLayout>
