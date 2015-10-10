@@ -13,9 +13,12 @@ public class RunnableFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.thread_runnable_example, container, false);
+
         Button applicationNotRespondingButton = (Button) rootView.findViewById(R.id.tr_button);
         Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.runnable_text2);
+
         TextView textViewToPopulateOnClick = (TextView) rootView.findViewById(R.id.runnable_text1);
+
         applicationNotRespondingButton.setOnClickListener(new RunnableExampleOnClickListener(textViewToPopulateOnClick, getActivity()));
         buttonForShowingUIThreadResponse.setOnClickListener(new ButtonForShowingUIThreadIsActiveOnClickListener(getResources().getString(R.string.unblocked_toast_test)));
         return rootView;
