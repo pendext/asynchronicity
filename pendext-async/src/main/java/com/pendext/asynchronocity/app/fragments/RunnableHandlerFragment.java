@@ -15,7 +15,7 @@ public class RunnableHandlerFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.thread_runnable_handler_example, container, false);
         Button applicationNotRespondingButton = (Button) rootView.findViewById(R.id.tr_button);
         TextView textViewToPopulateOnClick = (TextView) rootView.findViewById(R.id.runnable_text1);
-        applicationNotRespondingButton.setOnClickListener(new RunnableHandlerOnClickListener(textViewToPopulateOnClick));
+        applicationNotRespondingButton.setOnClickListener(new RunnableHandlerOnClickListener(textViewToPopulateOnClick, getActivity()));
         return rootView;
     }
 }

@@ -1,19 +1,27 @@
 package com.pendext.asynchronocity.app.services;
 
+import android.app.Activity;
 import android.widget.TextView;
 
 public class ViewTextPopulator {
 
+    Activity activity;
     TextView viewToPopulateTextFor;
 
-    public ViewTextPopulator(TextView viewToPopulateTextFor ) {
+    public ViewTextPopulator(Activity activity, TextView viewToPopulateTextFor ) {
+        this.activity = activity;
         this.viewToPopulateTextFor = viewToPopulateTextFor ;
     }
 
-    public void populateTextWithSimulatedWait(String text, long simulatedWaitTimeInMillis) {
+    public void populateTextWithSimulatedWait(final String text, long simulatedWaitTimeInMillis) {
         try {
             Thread.sleep(simulatedWaitTimeInMillis);
-            viewToPopulateTextFor.setText(text);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    viewToPopulateTextFor.setText(text);
+                }
+            });
         } catch (InterruptedException e) {}
     }
 
