@@ -7,15 +7,17 @@ import android.widget.*;
 import com.pendext.asynchronocity.app.R;
 import com.pendext.asynchronocity.app.listeners.*;
 
-public class RunnableHandlerFragment extends Fragment {
+public class RunnableFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.thread_runnable_handler_example, container, false);
+        View rootView = inflater.inflate(R.layout.thread_runnable_example, container, false);
         Button applicationNotRespondingButton = (Button) rootView.findViewById(R.id.tr_button);
+        Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.runnable_text2);
         TextView textViewToPopulateOnClick = (TextView) rootView.findViewById(R.id.runnable_text1);
-        applicationNotRespondingButton.setOnClickListener(new RunnableHandlerOnClickListener(textViewToPopulateOnClick, getActivity()));
+        applicationNotRespondingButton.setOnClickListener(new RunnableExampleOnClickListener(textViewToPopulateOnClick, getActivity()));
+        buttonForShowingUIThreadResponse.setOnClickListener(new ButtonForShowingUIThreadIsActiveOnClickListener(getResources().getString(R.string.unblocked_toast_test)));
         return rootView;
     }
 }

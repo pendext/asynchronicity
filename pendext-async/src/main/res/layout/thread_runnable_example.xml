@@ -10,7 +10,7 @@
 
     <TextView
             android:id="@+id/thread_runnable_textbox"
-            android:text="@string/thread_runnable_handler_text"
+            android:text="@string/thread_runnable_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     <Button
@@ -21,8 +21,17 @@
             android:text="@string/press_me"/>
 
     <TextView
+            android:padding="10dip"
             android:id="@+id/runnable_text1"
             android:layout_below="@+id/tr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:padding="10dip"
+            android:id="@+id/runnable_text2"
+            android:text="@string/button_for_ui_work"
+            android:layout_below="@+id/runnable_text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

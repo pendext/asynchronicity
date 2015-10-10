@@ -20,4 +20,12 @@
             android:layout_below="@+id/application_not_responding_texbox"
             android:text="@string/press_me"/>
 
+    <Button
+            android:padding="10dip"
+            android:id="@+id/ui_work_button"
+            android:text="@string/button_for_ui_work"
+            android:layout_below="@+id/anr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 </RelativeLayout>

@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 
     private String[] list = new String[] {
             "Application Not Responding Example",
-            "Thread.Runnable/Handler Example",
+            "Runnable Example",
             "Async Task Example",
             "Loader Example"
     };

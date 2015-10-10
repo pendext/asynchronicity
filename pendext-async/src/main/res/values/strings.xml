@@ -3,8 +3,10 @@
     <string name="hello_world_async">Hello world, Async Task!</string>
     <string name="hello_world_loader">Hello world, Loader!</string>
     <string name="application_not_responding_text">Press for Application Not Responding</string>
-    <string name="thread_runnable_handler_text">Press for Runnable/Handler Example</string>
+    <string name="thread_runnable_text">Press for Runnable Example</string>
     <string name="action_settings">Settings</string>
     <string name="press_me">Press me!</string>
+    <string name="button_for_ui_work">Click this button to see ongoing work on the UI thread.</string>
+    <string name="unblocked_toast_test">"This text indicates the UI thread is unblocked."</string>
     <string name="examples">Choose the example!</string>
 </resources>

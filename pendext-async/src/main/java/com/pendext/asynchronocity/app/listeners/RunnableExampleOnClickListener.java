@@ -6,19 +6,21 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import com.pendext.asynchronocity.app.runnables.TextRunnable;
 import com.pendext.asynchronocity.app.services.ViewTextPopulator;
+import org.joda.time.*;
 
-public class RunnableHandlerOnClickListener implements OnClickListener {
+public class RunnableExampleOnClickListener implements OnClickListener {
 
     private TextView textView;
     private Activity activity;
 
-    public RunnableHandlerOnClickListener(TextView textView, Activity activity) {
+    public RunnableExampleOnClickListener(TextView textView, Activity activity) {
         this.activity = activity;
         this.textView = textView;
     }
 
     @Override
     public void onClick(View v) {
-        new Thread(new TextRunnable(new ViewTextPopulator(activity, textView), "Text created in the RunnableHandlerOnClickListener")).start();
+        String invokedTime = new LocalTime().toString("hh:mm:ss");
+        new Thread(new TextRunnable(new ViewTextPopulator(activity, textView), "This text came from a background thread, invoked at: " + invokedTime)).start();
     }
 }
