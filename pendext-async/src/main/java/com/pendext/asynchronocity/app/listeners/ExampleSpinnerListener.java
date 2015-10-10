@@ -22,12 +22,9 @@ public class ExampleSpinnerListener implements OnItemSelectedListener {
                 fragmentManager.beginTransaction().replace(R.id.container, new ApplicationNotRespondingFragment()).commit();
                 break;
             case 1:
-                fragmentManager.beginTransaction().replace(R.id.container, new OnUIThreadFragment()).commit();
-                break;
-            case 2:
                 fragmentManager.beginTransaction().replace(R.id.container, new AsyncFragment()).commit();
                 break;
-            case 3:
+            case 2:
                 fragmentManager.beginTransaction().replace(R.id.container, new LoaderFragment()).commit();
                 break;
             default:

@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
-import android.widget.AdapterView.OnItemSelectedListener;
-import com.pendext.asynchronocity.app.fragments.OnUIThreadFragment;
+import com.pendext.asynchronocity.app.fragments.ApplicationNotRespondingFragment;
 import com.pendext.asynchronocity.app.listeners.ExampleSpinnerListener;
 
 
@@ -15,7 +14,6 @@ public class MainActivity extends Activity {
 
     private String[] list = new String[] {
             "Application Not Responding Example",
-            "On UI Thread Example",
             "Async Task Example",
             "Loader Example"
     };
@@ -33,7 +31,7 @@ public class MainActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new OnUIThreadFragment())
+                    .add(R.id.container, new ApplicationNotRespondingFragment())
                     .commit();
         }
     }
