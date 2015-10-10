@@ -3,6 +3,8 @@
     <string name="hello_world_ui">Hello world, On UI Thread!</string>
     <string name="hello_world_async">Hello world, Async Task!</string>
     <string name="hello_world_loader">Hello world, Loader!</string>
+    <string name="application_not_responding_text">Presss for Application Not Responding</string>
     <string name="action_settings">Settings</string>
+    <string name="press_me">Press me!</string>
     <string name="examples">Choose the example!</string>
 </resources>

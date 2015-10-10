@@ -19,12 +19,15 @@ public class ExampleSpinnerListener implements OnItemSelectedListener {
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                fragmentManager.beginTransaction().replace(R.id.container, new OnUIThreadFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, new ApplicationNotRespondingFragment()).commit();
                 break;
             case 1:
-                fragmentManager.beginTransaction().replace(R.id.container, new AsyncFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, new OnUIThreadFragment()).commit();
                 break;
             case 2:
+                fragmentManager.beginTransaction().replace(R.id.container, new AsyncFragment()).commit();
+                break;
+            case 3:
                 fragmentManager.beginTransaction().replace(R.id.container, new LoaderFragment()).commit();
                 break;
             default:

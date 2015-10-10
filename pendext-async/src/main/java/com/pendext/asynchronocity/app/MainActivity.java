@@ -14,6 +14,7 @@ public class MainActivity extends Activity {
     private Spinner exampleSpinner;
 
     private String[] list = new String[] {
+            "Application Not Responding Example",
             "On UI Thread Example",
             "Async Task Example",
             "Loader Example"
