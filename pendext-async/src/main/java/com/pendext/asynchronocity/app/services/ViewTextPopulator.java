@@ -2,6 +2,7 @@ package com.pendext.asynchronocity.app.services;
 
 import android.app.Activity;
 import android.widget.TextView;
+import org.joda.time.LocalTime;
 
 public class ViewTextPopulator {
 
@@ -10,7 +11,7 @@ public class ViewTextPopulator {
 
     public ViewTextPopulator(Activity activity, TextView viewToPopulateTextFor ) {
         this.activity = activity;
-        this.viewToPopulateTextFor = viewToPopulateTextFor ;
+        this.viewToPopulateTextFor = viewToPopulateTextFor;
     }
 
     public void populateTextWithSimulatedWait(final String text, long simulatedWaitTimeInMillis) {
@@ -19,7 +20,9 @@ public class ViewTextPopulator {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    viewToPopulateTextFor.setText(text);
+                    String invokedTime = new LocalTime().toString("hh:mm:ss");
+                    String textToPopulate = text + " and completed at " + invokedTime;
+                    viewToPopulateTextFor.setText(textToPopulate);
                 }
             });
         } catch (InterruptedException e) {}
