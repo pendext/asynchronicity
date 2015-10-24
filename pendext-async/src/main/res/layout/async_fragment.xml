@@ -9,8 +9,37 @@
                 tools:context=".MainActivity$PlaceholderFragment">
 
     <TextView
-            android:text="@string/hello_world_async"
+            android:id="@+id/async_textbox"
+            android:text="@string/async_task_text"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/as_button"
+            android:layout_below="@+id/async_textbox"
+            android:text="@string/press_me"/>
+
+    <TextView
+            android:padding="10dip"
+            android:id="@+id/as_progress"
+            android:layout_below="@+id/as_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:padding="10dip"
+            android:id="@+id/as_text1"
+            android:layout_below="@+id/as_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:padding="10dip"
+            android:id="@+id/as_text2"
+            android:text="@string/button_for_ui_work"
+            android:layout_below="@+id/as_text1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
 </RelativeLayout>
