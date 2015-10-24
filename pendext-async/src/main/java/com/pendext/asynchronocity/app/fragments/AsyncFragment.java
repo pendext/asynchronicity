@@ -6,7 +6,6 @@ import android.view.*;
 import android.widget.*;
 import com.pendext.asynchronocity.app.R;
 import com.pendext.asynchronocity.app.listeners.*;
-import org.joda.time.LocalTime;
 
 public class AsyncFragment extends Fragment {
 
@@ -17,9 +16,10 @@ public class AsyncFragment extends Fragment {
 
         Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.as_text2);
         Button buttonForInvokingAsyncTask = (Button) rootView.findViewById(R.id.as_button);
-        TextView textViewToUpdate = (TextView) rootView.findViewById(R.id.as_text1);
+        TextView textViewForFinalUpdate = (TextView) rootView.findViewById(R.id.as_text1);
+        TextView textViewForProgressUpdate = (TextView) rootView.findViewById(R.id.as_progress);
 
-        buttonForInvokingAsyncTask.setOnClickListener(new AsyncTaskExampleOnClickListener(textViewToUpdate));
+        buttonForInvokingAsyncTask.setOnClickListener(new AsyncTaskExampleOnClickListener(textViewForFinalUpdate, textViewForProgressUpdate));
         buttonForShowingUIThreadResponse.setOnClickListener(new ButtonForShowingUIThreadIsActiveOnClickListener(getResources().getString(R.string.unblocked_toast_test)));
 
         return rootView;
