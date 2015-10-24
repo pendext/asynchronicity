@@ -1,7 +1,6 @@
 package com.pendext.asynchronocity.app.asynctask;
 
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.TextView;
 import org.joda.time.LocalTime;
 

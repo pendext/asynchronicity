@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">asynchronocity</string>
     <string name="hello_world_async">Hello world, Async Task!</string>
-    <string name="hello_world_loader">Hello world, Loader!</string>
+    <string name="loader_press_text">Press to add text to list</string>
     <string name="application_not_responding_text">Press for Application Not Responding</string>
     <string name="thread_runnable_text">Press for Runnable Example</string>
     <string name="async_task_text">Press for AsyncTask Example</string>
