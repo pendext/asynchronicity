@@ -1,19 +1,19 @@
 package com.pendext.asynchronocity.app.runnables;
 
-import com.pendext.asynchronocity.app.services.ViewTextPopulator;
+import com.pendext.asynchronocity.app.services.RunOnUiThreadViewTextPopulator;
 
 public class TextRunnable implements Runnable {
 
-    private ViewTextPopulator viewTextPopulator;
+    private RunOnUiThreadViewTextPopulator runOnUiThreadViewTextPopulator;
     private String textToPopulate;
 
-    public TextRunnable(ViewTextPopulator viewTextPopulator, String textToPopulate) {
+    public TextRunnable(RunOnUiThreadViewTextPopulator runOnUiThreadViewTextPopulator, String textToPopulate) {
         this.textToPopulate = textToPopulate;
-        this.viewTextPopulator = viewTextPopulator;
+        this.runOnUiThreadViewTextPopulator = runOnUiThreadViewTextPopulator;
     }
 
     @Override
     public void run() {
-        viewTextPopulator.populateTextWithSimulatedWait(textToPopulate, 10000);
+        runOnUiThreadViewTextPopulator.populateTextWithSimulatedWait(textToPopulate, 10000);
     }
 }

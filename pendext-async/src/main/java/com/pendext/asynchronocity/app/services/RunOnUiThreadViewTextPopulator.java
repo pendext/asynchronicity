@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.widget.TextView;
 import org.joda.time.LocalTime;
 
-public class ViewTextPopulator {
+public class RunOnUiThreadViewTextPopulator {
 
     Activity activity;
     TextView viewToPopulateTextFor;
 
-    public ViewTextPopulator(Activity activity, TextView viewToPopulateTextFor ) {
+    public RunOnUiThreadViewTextPopulator(Activity activity, TextView viewToPopulateTextFor) {
         this.activity = activity;
         this.viewToPopulateTextFor = viewToPopulateTextFor;
     }

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import com.pendext.asynchronocity.app.runnables.TextRunnable;
-import com.pendext.asynchronocity.app.services.ViewTextPopulator;
+import com.pendext.asynchronocity.app.services.RunOnUiThreadViewTextPopulator;
 import org.joda.time.*;
 
 public class RunnableExampleOnClickListener implements OnClickListener {
@@ -20,7 +20,8 @@ public class RunnableExampleOnClickListener implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+        textView.setText("");
         String invokedTime = new LocalTime().toString("hh:mm:ss");
-        new Thread(new TextRunnable(new ViewTextPopulator(activity, textView), "This text came from a background thread, invoked at: " + invokedTime)).start();
+        new Thread(new TextRunnable(new RunOnUiThreadViewTextPopulator(activity, textView), "This text came from a background thread, invoked at: " + invokedTime)).start();
     }
 }
