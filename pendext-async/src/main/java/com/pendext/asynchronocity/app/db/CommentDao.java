@@ -36,6 +36,16 @@ public class CommentDao {
 //        cursor.close();
     }
 
+    public Cursor getCommentCursor() {
+        open();
+        Cursor cursor = sqliteDatabase.query(ASqliteOpenHelper.COMMENT_TABLE,
+                columns, ASqliteOpenHelper.COLUMN_ID, null,
+                null, null, null);
+        cursor.moveToFirst();
+//        cursor.close();
+        return cursor;
+    }
+
     private Comment cursorToComment(Cursor cursor) {
         Comment comment = new Comment();
         comment.setId(cursor.getLong(0));

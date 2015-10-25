@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
+import com.pendext.asynchronocity.app.db.ASqliteOpenHelper;
 import com.pendext.asynchronocity.app.fragments.ApplicationNotRespondingFragment;
 import com.pendext.asynchronocity.app.listeners.ExampleSpinnerListener;
 
@@ -29,6 +30,9 @@ public class MainActivity extends Activity {
         ArrayAdapter<String> exampleSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
         exampleSpinner.setAdapter(exampleSpinnerAdapter);
         exampleSpinner.setOnItemSelectedListener(new ExampleSpinnerListener(getFragmentManager()));
+
+        ASqliteOpenHelper aSqliteOpenHelper = new ASqliteOpenHelper(this);
+        aSqliteOpenHelper.onCreate(aSqliteOpenHelper.getWritableDatabase());
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()

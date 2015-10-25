@@ -1,6 +1,6 @@
 package com.pendext.asynchronocity.app.db;
 
-import android.content.Context;
+import android.content.*;
 import android.database.sqlite.*;
 
 public class ASqliteOpenHelper extends SQLiteOpenHelper {
@@ -21,7 +21,11 @@ public class ASqliteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
+        database.execSQL("DROP TABLE IF EXISTS " + COMMENT_TABLE);
         database.execSQL(CREATE_DATABASE);
+        ContentValues values = new ContentValues();
+        values.put(COMMENT_COLUMN, "This is the initial comment.");
+        database.insert(COMMENT_TABLE, null, values);
     }
 
     @Override

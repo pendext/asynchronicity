@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    <TextView
+    <ListView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_below="@+id/loader_add_comment_button"
