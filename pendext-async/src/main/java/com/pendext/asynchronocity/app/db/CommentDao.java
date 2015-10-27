@@ -25,9 +25,10 @@ public class CommentDao {
     }
 
     public void publishComment(String commentText) {
+        open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(ASqliteOpenHelper.COMMENT_COLUMN, commentText);
-        long insertId = sqliteDatabase.insert(ASqliteOpenHelper.COMMENT_TABLE, null, contentValues);
+        sqliteDatabase.insert(ASqliteOpenHelper.COMMENT_TABLE, null, contentValues);
 //        Cursor cursor = sqliteDatabase.query(ASqliteOpenHelper.COMMENT_TABLE,
 //                columns, ASqliteOpenHelper.COLUMN_ID + " = " + insertId, null,
 //                null, null, null);

@@ -19,7 +19,9 @@ public class CommentContentProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         CommentDao commentDao = new CommentDao(getContext());
-        return commentDao.getCommentCursor();
+        Cursor commentCursor = commentDao.getCommentCursor();
+        commentCursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return commentCursor;
     }
 
     @Override

@@ -30,7 +30,7 @@
 
     <ListView
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="100dp"
               android:layout_below="@+id/loader_add_comment_button"
               android:id="@+id/loader_show_comment"/>
 
