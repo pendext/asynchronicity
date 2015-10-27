@@ -3,6 +3,7 @@ package com.pendext.asynchronocity.app.providers;
 import android.content.*;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 import com.pendext.asynchronocity.app.db.CommentDao;
 
 public class CommentContentProvider extends ContentProvider {
@@ -18,8 +19,9 @@ public class CommentContentProvider extends ContentProvider {
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        Log.i("CommentContentProvider", "query() called");
         CommentDao commentDao = new CommentDao(getContext());
-        Cursor commentCursor = commentDao.getCommentCursor();
+        Cursor commentCursor = commentDao.getCommentCursorWithWait();
         commentCursor.setNotificationUri(getContext().getContentResolver(), uri);
         return commentCursor;
     }

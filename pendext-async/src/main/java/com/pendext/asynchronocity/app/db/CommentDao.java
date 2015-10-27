@@ -3,6 +3,7 @@ package com.pendext.asynchronocity.app.db;
 import android.content.*;
 import android.database.*;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import com.pendext.asynchronocity.app.model.Comment;
 
 public class CommentDao {
@@ -29,29 +30,30 @@ public class CommentDao {
         ContentValues contentValues = new ContentValues();
         contentValues.put(ASqliteOpenHelper.COMMENT_COLUMN, commentText);
         sqliteDatabase.insert(ASqliteOpenHelper.COMMENT_TABLE, null, contentValues);
-//        Cursor cursor = sqliteDatabase.query(ASqliteOpenHelper.COMMENT_TABLE,
-//                columns, ASqliteOpenHelper.COLUMN_ID + " = " + insertId, null,
-//                null, null, null);
-//        cursor.moveToFirst();
-//        Comment newComment = cursorToComment(cursor);
-//        cursor.close();
     }
 
     public Cursor getCommentCursor() {
+        Log.i("CommentDao", "getCommentCursor called");
         open();
         Cursor cursor = sqliteDatabase.query(ASqliteOpenHelper.COMMENT_TABLE,
                 columns, ASqliteOpenHelper.COLUMN_ID, null,
                 null, null, null);
         cursor.moveToFirst();
-//        cursor.close();
         return cursor;
     }
 
-    private Comment cursorToComment(Cursor cursor) {
-        Comment comment = new Comment();
-        comment.setId(cursor.getLong(0));
-        comment.setText(cursor.getString(1));
-        return comment;
+    public Cursor getCommentCursorWithWait() {
+        Log.i("CommentDao", "getCommentCursorWithWait called");
+        try {
+            Log.i("CommentDao", "Thread.sleep called");
+            Thread.sleep(10000);
+        } catch (InterruptedException e) { }
+        open();
+        Cursor cursor = sqliteDatabase.query(ASqliteOpenHelper.COMMENT_TABLE,
+                columns, ASqliteOpenHelper.COLUMN_ID, null,
+                null, null, null);
+        cursor.moveToFirst();
+        return cursor;
     }
 
 }

@@ -25,6 +25,6 @@ public class LoaderAddCommentOnClickListener implements OnClickListener {
         commentDao.publishComment(commentText);
         editText.getContext().getContentResolver().notifyChange(Uri.parse(CommentContentProvider.URI), null);
         editText.setText("");
-        ((SimpleCursorAdapter) listView.getAdapter()).notifyDataSetChanged();
+//        ((SimpleCursorAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 }
