@@ -11,10 +11,8 @@ public class LoaderAddCommentOnClickListener implements OnClickListener {
 
     private EditText editText;
     public CommentDao commentDao;
-    private ListView listView;
 
-    public LoaderAddCommentOnClickListener(EditText editText, ListView listView) {
-        this.listView = listView;
+    public LoaderAddCommentOnClickListener(EditText editText) {
         this.editText = editText;
         commentDao = new CommentDao(editText.getContext());
     }
@@ -25,6 +23,5 @@ public class LoaderAddCommentOnClickListener implements OnClickListener {
         commentDao.publishComment(commentText);
         editText.getContext().getContentResolver().notifyChange(Uri.parse(CommentContentProvider.URI), null);
         editText.setText("");
-//        ((SimpleCursorAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 }
