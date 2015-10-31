@@ -12,7 +12,7 @@ public class AsyncFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.async_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.async_example, container, false);
 
         Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.as_text2);
         Button buttonForInvokingAsyncTask = (Button) rootView.findViewById(R.id.as_button);
