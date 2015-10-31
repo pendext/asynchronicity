@@ -17,7 +17,8 @@ public class MainActivity extends Activity {
             "Application Not Responding Example",
             "Runnable Example",
             "Async Task Example",
-            "Loader Example"
+            "Loader Example",
+            "Event Bus Example"
     };
 
     @Override

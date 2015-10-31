@@ -20,7 +20,7 @@ public class LoaderFragment extends Fragment implements LoaderManager.LoaderCall
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.loader_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.loader_example, container, false);
 
         EditText commentEditText = (EditText) rootView.findViewById(R.id.loader_add_comment);
         Button addCommentButton = (Button) rootView.findViewById(R.id.loader_add_comment_button);

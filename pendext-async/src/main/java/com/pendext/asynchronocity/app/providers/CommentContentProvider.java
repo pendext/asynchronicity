@@ -8,8 +8,6 @@ import com.pendext.asynchronocity.app.db.CommentDao;
 
 public class CommentContentProvider extends ContentProvider {
 
-//    private static final UriMatcher matcher = new UriMatcher();
-
     public static final String URI = "content://com.pendext.asynchronocity.app.providers/comments";
 
     @Override
