@@ -16,14 +16,14 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tr_button"
+            android:id="@+id/event_bus_invoke_button"
             android:layout_below="@+id/event_bus_textbox"
             android:text="@string/press_me"/>
 
     <TextView
             android:padding="10dip"
             android:id="@+id/event_bus_text1"
-            android:layout_below="@+id/tr_button"
+            android:layout_below="@+id/event_bus_invoke_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

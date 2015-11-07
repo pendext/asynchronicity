@@ -1,6 +1,7 @@
 package com.pendext.asynchronocity.app.listeners;
 
 import android.app.FragmentManager;
+import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -10,8 +11,10 @@ import com.pendext.asynchronocity.app.fragments.*;
 public class ExampleSpinnerListener implements OnItemSelectedListener {
 
     private FragmentManager fragmentManager;
+    private Context context;
 
-    public ExampleSpinnerListener(FragmentManager fragmentManager) {
+    public ExampleSpinnerListener(FragmentManager fragmentManager, Context context) {
+        this.context = context;
         this.fragmentManager = fragmentManager;
     }
 
@@ -31,7 +34,7 @@ public class ExampleSpinnerListener implements OnItemSelectedListener {
                 fragmentManager.beginTransaction().replace(R.id.container, new LoaderFragment()).commit();
                 break;
             case 4:
-                fragmentManager.beginTransaction().replace(R.id.container, new EventBusFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, new EventBusFragment(context)).commit();
                 break;
             default:
                 throw new RuntimeException();

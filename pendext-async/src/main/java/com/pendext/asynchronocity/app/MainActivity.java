@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
         ArrayAdapter<String> exampleSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
         exampleSpinner.setAdapter(exampleSpinnerAdapter);
-        exampleSpinner.setOnItemSelectedListener(new ExampleSpinnerListener(getFragmentManager()));
+        exampleSpinner.setOnItemSelectedListener(new ExampleSpinnerListener(getFragmentManager(), getApplicationContext()));
 
         ASqliteOpenHelper aSqliteOpenHelper = new ASqliteOpenHelper(this);
         aSqliteOpenHelper.onCreate(aSqliteOpenHelper.getWritableDatabase());
