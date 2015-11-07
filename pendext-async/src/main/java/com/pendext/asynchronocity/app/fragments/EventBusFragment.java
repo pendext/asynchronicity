@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.Button;
 import com.pendext.asynchronocity.app.R;
+import com.pendext.asynchronocity.app.listeners.ButtonForShowingUIThreadIsActiveOnClickListener;
 
 public class EventBusFragment extends Fragment {
 
@@ -13,7 +14,8 @@ public class EventBusFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.event_bus_example, container, false);
 
-        Button uiWorkButton = (Button) rootView.findViewById(R.id.loader_ui_work);
+        Button uiWorkButton = (Button) rootView.findViewById(R.id.event_bus_ui_work);
+        uiWorkButton.setOnClickListener(new ButtonForShowingUIThreadIsActiveOnClickListener(getResources().getString(R.string.unblocked_toast_test)));
 
         return rootView;
     }

@@ -15,7 +15,7 @@ public class RunnableFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.thread_runnable_example, container, false);
 
         Button applicationNotRespondingButton = (Button) rootView.findViewById(R.id.tr_button);
-        Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.runnable_text2);
+        Button buttonForShowingUIThreadResponse = (Button) rootView.findViewById(R.id.event_bus_ui_work);
 
         TextView textViewToPopulateOnClick = (TextView) rootView.findViewById(R.id.runnable_text1);
 
