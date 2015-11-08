@@ -1,15 +1,20 @@
 package com.pendext.asynchronocity.app.jobs;
 
 import com.path.android.jobqueue.*;
+import com.pendext.asynchronocity.app.events.FibonacciEvent;
+import com.pendext.asynchronocity.app.singleton.EventBusSingleton;
+import de.greenrobot.event.EventBus;
 
 public class FibonacciJob extends Job {
 
-    private int previousNumber;
-    private int previousPreviousNumber;
+    private int newNumberInSequence;
 
-    public FibonacciJob(int priority, int previousNumber) {
+    private EventBus eventBus;
+
+    public FibonacciJob(int priority, int previousNumber, int previousPreviousNumber) {
         super(new Params(priority));
-        this.previousNumber = previousNumber;
+        this.newNumberInSequence = previousNumber + previousPreviousNumber;
+        eventBus = EventBusSingleton.getEventBus();
     }
 
     @Override
@@ -17,7 +22,8 @@ public class FibonacciJob extends Job {
 
     @Override
     public void onRun() throws Throwable {
-        System.out.println("Job invoked!");
+        Thread.sleep(5000); //Long running operation would go here
+        eventBus.post(new FibonacciEvent(newNumberInSequence));
     }
 
     @Override

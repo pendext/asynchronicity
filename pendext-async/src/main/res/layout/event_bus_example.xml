@@ -27,11 +27,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+    <TextView
+            android:padding="10dip"
+            android:id="@+id/event_bus_fibonacci"
+            android:layout_below="@+id/event_bus_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000" />
+
     <Button
             android:padding="10dip"
             android:id="@+id/event_bus_ui_work"
             android:text="@string/button_for_ui_work"
-            android:layout_below="@+id/event_bus_text1"
+            android:layout_below="@+id/event_bus_fibonacci"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
