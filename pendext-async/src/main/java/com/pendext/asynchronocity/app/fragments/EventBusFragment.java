@@ -20,17 +20,22 @@ public class EventBusFragment extends Fragment {
     private EventBus eventBus;
     private List<Integer> numbers;
     private TextView fibonocciTextView;
+    private Context context;
     private static final String INITIAL_SEQUENCE = "0";
 
-    public EventBusFragment(Context context) {
+    public EventBusFragment() {
         numbers = new ArrayList<>();
         numbers.add(0, 0);
         numbers.add(0, 1);
-        jobManager = new JobManager(context);
         eventBus = EventBusSingleton.getEventBus();
         if (!eventBus.isRegistered(this)) {
             eventBus.register(this);
         }
+    }
+
+    public void setUpJobManager(Context context) {
+        this.context = context;
+        jobManager = new JobManager(context);
     }
 
     @Override
