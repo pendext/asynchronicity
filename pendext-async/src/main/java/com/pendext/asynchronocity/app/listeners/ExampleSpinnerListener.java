@@ -38,6 +38,10 @@ public class ExampleSpinnerListener implements OnItemSelectedListener {
                 eventBusFragment.setUpJobManager(context);
                 fragmentManager.beginTransaction().replace(R.id.container, eventBusFragment).commit();
                 break;
+            case 5:
+                ReactiveFragment reactiveFragment = new ReactiveFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, reactiveFragment).commit();
+                break;
             default:
                 throw new RuntimeException();
         }

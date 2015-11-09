@@ -18,7 +18,8 @@ public class MainActivity extends Activity {
             "Runnable Example",
             "Async Task Example",
             "Loader Example",
-            "Job Queue/Event Bus Example"
+            "Job Queue/Event Bus Example",
+            "RxJava Example"
     };
 
     @Override
