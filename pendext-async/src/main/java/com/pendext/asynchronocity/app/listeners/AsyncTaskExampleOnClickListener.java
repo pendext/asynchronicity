@@ -22,7 +22,6 @@ public class AsyncTaskExampleOnClickListener implements OnClickListener {
         textViewForFinalUpdate.setText("");
         textViewForProgressUpdate.setText("");
         String startTime = new LocalTime().toString("hh:mm:ss");
-        basicAsyncTask = new BasicAsyncTask(textViewForFinalUpdate, textViewForProgressUpdate);
-        basicAsyncTask.execute(startTime);
+        new BasicAsyncTask(textViewForFinalUpdate, textViewForProgressUpdate).execute(startTime);
     }
 }

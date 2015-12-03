@@ -29,7 +29,9 @@ public class BasicAsyncTask extends AsyncTask<String, Integer, String> {
                 Thread.sleep(1000);
             }
             this.endTime = new LocalTime().toString("hh:mm:ss");
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+            // Something should be caught here
+        }
         return null;
     }
 
