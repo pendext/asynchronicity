@@ -21,23 +21,21 @@ public class ReactiveExampleOnClickListener implements OnClickListener {
     public void onClick(View v) {
         String invokedTime = new LocalTime().toString("hh:mm:ss");
         textView.setText("This is the initial button press at " + invokedTime);
-        Subscription subscription = makeLongRunningCall()
-                                    .subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribe(new Observer<String>() {
-                                        @Override
-                                        public void onCompleted() {
-                                        }
+        makeLongRunningCall()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onCompleted() {}
 
-                                        @Override
-                                        public void onError(Throwable e) {
-                                        }
+                    @Override
+                    public void onError(Throwable e) {}
 
-                                        @Override
-                                        public void onNext(String s) {
-                                            textView.setText("The long running operation ended at " + s);
-                                        }
-                                    });
+                    @Override
+                    public void onNext(String s) {
+                        textView.setText("The long running operation ended at " + s);
+                    }
+                });
     }
 
     public Observable<String> makeLongRunningCall() {
