@@ -30,7 +30,7 @@ android {
         }
     }
     lintOptions {
-        abortOnError true
+        abortOnError false
     }
 }
 
@@ -41,5 +41,5 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'io.reactivex:rxjava:1.0.15'
     compile 'io.reactivex:rxandroid:1.0.1'
-
+    compile 'com.squareup.okhttp:okhttp:2.7.1'
 }

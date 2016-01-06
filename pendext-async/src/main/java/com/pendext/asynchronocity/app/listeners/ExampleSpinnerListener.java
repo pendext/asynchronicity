@@ -42,6 +42,10 @@ public class ExampleSpinnerListener implements OnItemSelectedListener {
                 ReactiveFragment reactiveFragment = new ReactiveFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, reactiveFragment).commit();
                 break;
+            case 6:
+                StrictModeFragment strictModeFragment = new StrictModeFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, strictModeFragment).commit();
+                break;
             default:
                 throw new RuntimeException();
         }
