@@ -16,7 +16,7 @@ public class StrictModeFragment extends Fragment {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .detectAll()
-                .penaltyLog()
+                .penaltyFlashScreen()
                 .build();
         StrictMode.setThreadPolicy(policy);
 
