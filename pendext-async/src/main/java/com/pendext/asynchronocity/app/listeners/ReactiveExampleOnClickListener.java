@@ -21,7 +21,7 @@ public class ReactiveExampleOnClickListener implements OnClickListener {
     public void onClick(View v) {
         String invokedTime = new LocalTime().toString("hh:mm:ss");
         textView.setText("This is the initial button press at " + invokedTime);
-        makeLongRunningCall()
+        getData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
@@ -38,7 +38,7 @@ public class ReactiveExampleOnClickListener implements OnClickListener {
                 });
     }
 
-    public Observable<String> makeLongRunningCall() {
+    public Observable<String> getData() {
         return Observable.just("").map(new Func1<String, String>() {
             @Override
             public String call(String aString) {
